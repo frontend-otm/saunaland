@@ -23,6 +23,7 @@ body {
   background-color: $black;
   color: $white;
   font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.08em;
 }
 
 img {
@@ -689,9 +690,10 @@ img {
   }
   &-item {
     width: calc(100% / 1);
-    padding-right: 1rem;
+    padding-right: 0.75rem;
     @media (min-width: 767px) {
       width: calc(100% / 2);
+      padding-right: 1rem;
     }
   }
 
@@ -848,8 +850,9 @@ img {
   }
 }
 @media screen and (min-width: 767px) {
+
   .sub__power__inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
 
     &-content {
       display: block;
@@ -871,8 +874,7 @@ img {
   position: absolute;
   display: inline-grid;
   top: 70%;
-  left: 15%;
-
+  left: 1.5rem;
   p {
     width: 100%;
     font-size: 14px;
@@ -897,6 +899,7 @@ img {
 }
 @media screen and (min-width: 575px) {
   .polygon__content {
+    
     p {
       width: 100%;
       font-size: 21px;
