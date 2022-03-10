@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 </head>
 <body>
     <section class="hero">
@@ -26,7 +27,7 @@
                 <h1>
                     <img class="hero__logo-saunaland" src="images/logo_saunaland.png" alt="">
                     <i class="hero__cross"></i>
-                    <img class="hero__logo-owndays" src="images/logo_owndays.png" alt="">
+                    <img class="hero__logo-owndays" src="images/logo_owndays.svg" alt="">
                 </h1>
                 <div class="hero__content-footer">
                     <p>OWNDAYSオンラインストア限定販売</p>
@@ -91,7 +92,7 @@
         </div>
         <div class="video__info container">
             <strong class="video__highlight">さまざまなOWNDAYS情報を <br>ゆるっとお届けする『OWNDAYS TV』</strong>
-            <a href="https://www.youtube.com/watch?v=4jIZ-Q_Uu4s" class="video__link" target="_blank"><img src="images/video_thumb.jpg" alt=""></a>
+            <a data-fancybox href="https://www.youtube.com/watch?v=4jIZ-Q_Uu4s" class="video__link" target="_blank"><img src="images/video_thumb.jpg" alt=""></a>
             <div class="video__detail">
                 <p>熱に強く曇らない？サウナ専用メガネを試してみた【検証】 | OWNDAYS TV</p>
                 <p><small>サウナ専用メガネは、本当にサウナで使って快適なのか？<br>MassaとNOWAの2人が身体を張ってサウナの中でも快適に使用できるのか検証していきます。</small></p>
@@ -192,14 +193,14 @@
         </div>
         <div class="container">
             <div class="lineup__group">
-                <ul class="lineup__slider slider">
-                    <li><img src="images/slider_blue1.jpg" alt=""></li>
-                    <li><img src="images/slider_blue2.jpg" alt=""></li>
-                    <li><img src="images/slider_blue3.jpg" alt=""></li>
-                    <li><img src="images/slider_blue4.jpg" alt=""></li>
-                    <li><img src="images/slider_blue5.jpg" alt=""></li>
-                    <li><img src="images/slider_blue6.jpg" alt=""></li>
-                </ul>
+                <div class="lineup__slider slider">
+                    <div><img src="images/slider_blue1.jpg" alt=""></div>
+                    <div><img src="images/slider_blue2.jpg" alt=""></div>
+                    <div><img src="images/slider_blue3.jpg" alt=""></div>
+                    <div><img src="images/slider_blue4.jpg" alt=""></div>
+                    <div><img src="images/slider_blue5.jpg" alt=""></div>
+                    <div><img src="images/slider_blue6.jpg" alt=""></div>
+                </div>
                 <div class="lineup__detail">
                     <h3>BLUE <small>SA2001T-1S</small></h3>
                     <h4>¥3,000 <small><span>＋</span>税</small></h4>
@@ -238,14 +239,14 @@
                 </div>
             </div>
             <div class="lineup__group lineup__group--pink">
-                <ul class="lineup__slider slider">
-                    <li><img src="images/slider_pink1.jpg" alt=""></li>
-                    <li><img src="images/slider_pink2.jpg" alt=""></li>
-                    <li><img src="images/slider_pink3.jpg" alt=""></li>
-                    <li><img src="images/slider_pink4.jpg" alt=""></li>
-                    <li><img src="images/slider_pink5.jpg" alt=""></li>
-                    <li><img src="images/slider_pink6.jpg" alt=""></li>
-                </ul>
+                <div class="lineup__slider slider">
+                    <div><img src="images/slider_pink1.jpg" alt=""></div>
+                    <div><img src="images/slider_pink2.jpg" alt=""></div>
+                    <div><img src="images/slider_pink3.jpg" alt=""></div>
+                    <div><img src="images/slider_pink4.jpg" alt=""></div>
+                    <div><img src="images/slider_pink5.jpg" alt=""></div>
+                    <div><img src="images/slider_pink6.jpg" alt=""></div>
+                </div>
                 <div class="lineup__detail">
                     <h3>PINK <small>SA2001T-1S</small></h3>
                     <h4>¥3,000 <small><span>＋</span>税</small></h4>
@@ -318,6 +319,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
