@@ -1,12 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Saunaland - Owndays</title>
+    <link rel="stylesheet" href="/Anuwat/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="/Anuwat/css/slick-theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 </head>
 <body>
-    
+    <section class="hero">
+        <div class="hero__inner">
+            <picture>
+                <source media="(min-width:768px)" srcset="/Anuwat/images/hero-pc.jpg">
+                <img class="hero__bg" src="/Anuwat/images/hero-sp.jpg" alt="">
+            </picture>
+            <div class="hero__content">
+                <p class="hero__content-product">
+                    <span>4段階の度数から選べる近視用度付き</span>
+                    <span class="hero__logo-product">
+                        <img src="/Anuwat/images/logo_product.png" alt="">
+                    </span>
+                </p>
+                <h1>
+                    <img class="hero__logo-saunaland" src="/Anuwat/images/logo_saunaland.png" alt="">
+                    <i class="hero__cross"></i>
+                    <img class="hero__logo-owndays" src="/Anuwat/images/logo_owndays.svg" alt="">
+                </h1>
+                <div class="hero__content-footer">
+                    <p>OWNDAYSオンラインストア限定販売</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="concept">
+        <div class="container">
+            <div class="title">
+                <h2 class="title__text"><strong>CONCEPT</strong> コンセプト</h2>
+            </div>
+            <div class="concept__info">
+                <div class="concept__img">
+                    <img src="/Anuwat/images/concept_glasses.jpg" alt="">
+                </div>
+                <div class="concept__description">
+                    <h2>
+                        <img class="title-glow" src="/Anuwat/images/ttl_first.png" alt="">
+                    </h2>
+                    <div class="concept__description-wrapper">
+                        <p>
+                            幻冬舎・編集者の箕輪厚介氏が編集長を務める話題のサウナ雑誌『サウナランド』とOWNDAYSのコラボが実現！<br>
+                            「足元が見えづらくて不安…」「新しい場所は勝手がわからないから見えなくて困る！」そんなサウナを愛しているのにイマイチサウナを楽しみきれなかったサウナーへ。「サウナ専用メガネ」できました。もちろんお風呂でも使えます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <ul class="concept__link">
+                <li>
+                    <a href="#spec1"><img src="/Anuwat/images/spec1.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#spec2"><img src="/Anuwat/images/spec2.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#spec3"><img src="/Anuwat/images/spec3.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#spec4"><img src="/Anuwat/images/spec4.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+        <ul class="concept__showcase">
+            <li>
+                <img src="/Anuwat/images/concept_showcase-1.jpg" alt="">
+            </li>
+            <li>
+                <img src="/Anuwat/images/concept_showcase-2.jpg" alt="">
+            </li>
+            <li>
+                <img src="/Anuwat/images/concept_showcase-3.jpg" alt="">
+            </li>
+            <li>
+                <img src="/Anuwat/images/concept_showcase-4.jpg" alt="">
+            </li>
+        </ul>
+    </section>
+    <section class="video">
+        <div class="video__title-wrapper">
+            <h3 class="video__title">VIDEO<br>CONTENTS</h3>
+        </div>
+        <div class="video__info container">
+            <strong class="video__highlight">さまざまなOWNDAYS情報を <br>ゆるっとお届けする『OWNDAYS TV』</strong>
+            <a data-fancybox href="https://www.youtube.com/watch?v=4jIZ-Q_Uu4s" class="video__link"><img src="/Anuwat/images/video_thumb.jpg" alt=""></a>
+            <div class="video__detail">
+                <p>熱に強く曇らない？サウナ専用メガネを試してみた【検証】 | OWNDAYS TV</p>
+                <p><small>サウナ専用メガネは、本当にサウナで使って快適なのか？<br>MassaとNOWAの2人が身体を張ってサウナの中でも快適に使用できるのか検証していきます。</small></p>
+            </div>
+        </div>
+    </section>
+    <section class="spec">
+        <div class="overflow-hidden">
+            <h2 class="section-title">
+                <img class="title-glow" src="/Anuwat/images/ttl_spec.png" alt="">
+                <small><img src="/Anuwat/images/ttl_spec2.png" alt=""></small>
+            </h2>
+        </div>
+        <div class="container">
+            <ul class="spec__list">
+                <li id="spec1">
+                    <div class="spec__photo-wrapper">
+                        <img src="/Anuwat/images/spec_photo1.jpg" alt="">
+                    </div>
+                    <h3>熱に強く丈夫</h3>
+                    <p>フレーム・レンズともに熱に強い「ポリカーボネート」を採用。<br>
+                        耐熱温度は120℃～130℃で熱による変形が起こりにくく、弾力性にも優れているので、踏んでも割れない頑丈さも特徴です。</p>
+                </li>
+                <li id="spec2">
+                    <div class="spec__photo-wrapper">
+                        <img src="/Anuwat/images/spec_photo2.jpg" alt="">
+                    </div>
+                    <h3>軽いデザインと掛け心地</h3>
+                    <p>顔になじみやすいクリアカラーを採用し、軽さにもこだわったデザインと掛け心地で、日常的に使いやすいメガネに仕上がっています。</p>
+                </li>
+                <li id="spec3">
+                    <div class="spec__photo-wrapper">
+                        <img src="/Anuwat/images/spec_photo3.jpg" alt="">
+                    </div>
+                    <h3>曇りにくい</h3>
+                    <p>曇り止めコーディングを施しているので、サウナのような高温多湿の場所でも、汗をかいても曇りにくく、視界をクリアに保ちます。</p>
+                </li>
+                <li id="spec4">
+                    <div class="spec__photo-wrapper">
+                        <img src="/Anuwat/images/spec_photo4.jpg" alt="">
+                    </div>
+                    <h3>錆びない</h3>
+                    <p>金属を使用していないので、水濡れによる腐食の心配がありません。</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="power">
+        <div class="container">
+            <div class="power__detail-top">
+                <h2><img src="/Anuwat/images/ttl_sub_power.png" alt=""></h2>
+                <p>近視用［-3.00/-4.00/-5.00/-6.00］の4段階をご用意。強度数の方でも視界を確保し安心してサウナに入ることができます。</p>
+            </div>
+            <table>
+                <tr>
+                    <th>レンズ度数</th>
+                    <th>裸眼視力目安</th>
+                </tr>
+                <tr>
+                    <td>-3.00</td>
+                    <td><span>0.2</span> <small>程度</small></td>
+                </tr>
+                <tr>
+                    <td>-4.00</td>
+                    <td><span>0.1</span> <small>程度</small></td>
+                </tr>
+                <tr>
+                    <td>-5.00</td>
+                    <td><span>0.08</span> <small>程度</small></td>
+                </tr>
+                <tr>
+                    <td>-6.00</td>
+                    <td><span>0.06</span> <small>程度</small></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="easy-carry">
+        <div class="easy-carry__img-wrapper">
+            <picture>
+                <source media="(min-width:768px)" srcset="/Anuwat/images/spec_bottom_bg_pc.jpg">
+                <img src="/Anuwat/images/spec_bottom_bg_sp.jpg" alt="">
+            </picture>
+            <div class="container">
+                <div class="easy-carry__detail">
+                    <p><span>持ち運びに便利で、小物も入れられる</span></p>
+                    <p><span>コラボオリジナル携帯ケース付き</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="lineup">
+        <div class="overflow-hidden">
+            <h2 class="section-title">
+                <img class="title-glow" src="/Anuwat/images/ttl_line-up.png" alt="">
+                <small><img src="/Anuwat/images/ttl_line-up2.png" alt=""></small>
+            </h2>
+        </div>
+        <div class="container">
+            <div class="lineup__group">
+                <div class="lineup__slider slider">
+                    <div><img src="/Anuwat/images/slider_blue1.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_blue2.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_blue3.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_blue4.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_blue5.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_blue6.jpg" alt=""></div>
+                </div>
+                <div class="lineup__detail">
+                    <h3>BLUE <small>SA2001T-1S</small></h3>
+                    <h4>¥3,000 <small><span>＋</span>税</small></h4>
+
+                    <div class="lineup__link-wrapper">
+                        <div class="lineup__bubble">
+                            <span>ご希望の<br>度数を選択！</span>
+                        </div>
+                        <ul class="lineup__link">
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-3_blue.svg" alt="">
+                                    <span>0.2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-4_blue.svg" alt="">
+                                    <span>0.1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-5_blue.svg" alt="">
+                                    <span>0.08</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-6_blue.svg" alt="">
+                                    <span>0.06</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lineup__group lineup__group--pink">
+                <div class="lineup__slider slider">
+                    <div><img src="/Anuwat/images/slider_pink1.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_pink2.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_pink3.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_pink4.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_pink5.jpg" alt=""></div>
+                    <div><img src="/Anuwat/images/slider_pink6.jpg" alt=""></div>
+                </div>
+                <div class="lineup__detail">
+                    <h3>PINK <small>SA2001T-1S</small></h3>
+                    <h4>¥3,000 <small><span>＋</span>税</small></h4>
+
+                    <div class="lineup__link-wrapper">
+                        <ul class="lineup__link lineup__link--pink">
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-3_pink.svg" alt="">
+                                    <span>0.2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-4_pink.svg" alt="">
+                                    <span>0.1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-5_pink.svg" alt="">
+                                    <span>0.08</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/Anuwat/images/lineup_-6_pink.svg" alt="">
+                                    <span>0.06</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lineup__note">
+                <h5>購入・保証についてのご注意</h5>
+                <ul>
+                    <li>各種割引はご利用になれません。</li>
+                    <li>配送は日本国内のみ、海外発送は対応しておりません</li>
+                    <li>当商品は一律、保証はありません。</li>
+                    <li>お受け取り後の商品に不具合があった場合は、お客様窓口（0120-900-298）までお問い合わせください。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <picture>
+            <source media="(min-width:768px)" srcset="/Anuwat/images/lineup_bottom_bg_pc.jpg">
+            <img src="/Anuwat/images/lineup_bottom_bg_sp.jpg" alt="">
+        </picture>
+    </section>
+    <section class="about">
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__magazine">
+                    <img src="/Anuwat/images/img_sticker.jpg" alt="">
+                </div>
+                <div class="about__detail">
+                    <h3><img class="title-glow" src="/Anuwat/images/ttl_about.png" alt=""></h3>
+                    <p>箕輪厚介氏（幻冬舎・編集者）が編集長を務め、クラウドファンディングにて目標250万円に対し、1,000万円の支援額を突破した話題のサウナ雑誌。</p>
+                    <p>メインメッセージは「あなたのままで、幸せになれる」<br>
+                        コンセプトは「偏愛」「丸裸」「混沌」。<br>
+                        他者に勝って幸せを掴むのではなく、自分と向き合って幸せに気づく時代。
+                    </p>
+                    <p>サウナの「情報」ではなくサウナへの「偏愛」を、「表面的」なインタビューや特集ではなく、ハチャメチャな人たちのどこにも載っていない本音や肩の力が抜けた「丸裸」な姿を引き出し伝える一冊。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="/Anuwat/js/script.js"></script>
 </body>
 </html>
