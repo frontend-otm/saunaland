@@ -13,5 +13,5 @@ $(document).ready(function(){
         var position = target.offset().top;
         $("html, body").animate({scrollTop:position - 30}, speed, "swing");
         return false;
-      });
+    });
 });

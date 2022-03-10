@@ -1,5 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
+@mixin mq-up($size: null) {
+    @if $size == xs {
+        @media (min-width: 640px) { @content; }
+    } 
+    @else if $size == sm {
+        @media (min-width: 768px) { @content; }
+    } 
+    @else if $size == md {
+        @media (min-width: 1024px) { @content; }
+    } 
+    @else if $size == lg {
+        @media (min-width: 1200px) { @content; }
+    }
+    @else if $size == null {
+        @media (min-width: 768px) { @content; }
+    } 
+}
+
+@mixin mq-down($size: null) {
+    @if $size == xs {
+        @media (max-width: 639px) { @content; }
+    } 
+    @else if $size == sm {
+        @media (max-width: 767px) { @content; }
+    } 
+    @else if $size == md {
+        @media (max-width: 1023px) { @content; }
+    } 
+    @else if $size == lg {
+        @media (max-width: 1199px) { @content; }
+    }
+    @else if $size == null {
+        @media (max-width: 767px) { @content; }
+    }
+}
+
 $white: #fff;
 $yellow: #FDEF4E;
 
@@ -71,7 +107,7 @@ ul {
         filter: drop-shadow(0 3px 34px rgba(148,51,142,0.9)) brightness(1.1) !important;
     }
 
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         &__text {
             &::after {
                 width: 72px;
@@ -122,8 +158,8 @@ ul {
             margin-top: 10px;
         }
     }
-
-    @media (min-width: 768px) {
+    
+    @include mq-up() {
         padding: 0 1.8em;
 
         > img {
@@ -138,7 +174,7 @@ ul {
         }
     }
     
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         margin-bottom: 3.5rem;
         > img {
             height: 49px;
@@ -157,12 +193,12 @@ section {
     padding-top: 2rem;
     padding-bottom: 2rem;
 
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         padding-top: 3.5rem;
         padding-bottom: 3.5rem;
     }
 
-    @media (min-width: 1200px) {
+    @include mq-up(lg) {
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
@@ -290,6 +326,7 @@ section {
             height: 100%;
             background-color: $white;
         }
+
         &::before {
             transform: rotate(45deg);
         }
@@ -299,7 +336,7 @@ section {
         }
     }
 
-    @media (min-width: 640px) {
+    @include mq-up() {
         &__content {
             font-size: 13px;
     
@@ -307,6 +344,7 @@ section {
                 font-size: 11px;
             }
         }
+
         &__logo-product {
             width: 356px;
         }
@@ -320,7 +358,7 @@ section {
         }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         &__inner {
             background: none;
         }
@@ -390,6 +428,7 @@ section {
         padding: 6% 6% 6% 0;
         margin-top: 1.5rem;
     }
+
     &__description {
         margin-top: 3.3rem;
 
@@ -415,6 +454,7 @@ section {
             padding: 4.6em 25px 2.5em;
         }
     }
+    
     &__link {
         list-style: none;
         padding: 3rem 0;
@@ -432,7 +472,7 @@ section {
             }
         }
 
-        @media (max-width: 767px) {
+        @include mq-down() {
             max-width: 550px;
             margin: 0 auto;
         }
@@ -447,7 +487,7 @@ section {
         gap: 1px;
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         > .container {
             background: url('../images/concept_bg.png') top center / contain no-repeat;
         }
@@ -500,7 +540,7 @@ section {
         }
     }
 
-    @media (min-width: 1200px) {
+    @include mq-up(xl) {
         &__info {
             margin-top: -10%;
         }
@@ -590,7 +630,7 @@ section {
         }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         &__info {
             display: grid;
             grid-template-columns: 40% 1fr;
@@ -622,7 +662,7 @@ section {
             padding-bottom: 8px;
         }
     }
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         &__info {
             grid-template-columns: 30% 1fr;
         }
@@ -741,7 +781,7 @@ section {
         }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         &__list {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -770,7 +810,7 @@ section {
         }
     }
 
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         &__list {
             gap: 50px;
 
@@ -870,7 +910,7 @@ section {
         }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         > .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -887,7 +927,7 @@ section {
         }
     }
 
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         &__detail-top {
             padding: 0 46px 0 95px;
         }
@@ -981,7 +1021,7 @@ section {
         }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         .container {
             align-items: center;
         }
@@ -1004,7 +1044,7 @@ section {
         }
     }
 
-    @media (min-width: 1200px) {
+    @include mq-up(lg) {
         margin-bottom: 1rem;
     }
 }
@@ -1015,7 +1055,7 @@ section {
             margin-top: 3rem;
         }
 
-        @media(max-width: 1023px) {
+        @include mq-down(md) {
             max-width: 600px;
             margin: 0 auto;
         }
@@ -1073,7 +1113,7 @@ section {
             text-decoration: none;
             display: block;
             background: url('../images/lineup_btn_blue.png') center/100% 100% no-repeat;
-            padding: 4% 10% 9%;
+            padding: 3% 10% 9%;
             transition: 0.3s;
             &:hover {
                 filter: brightness(130%) saturate(200%);
@@ -1089,6 +1129,14 @@ section {
             span {
                 font-size: 8px;
                 font-weight: 400;
+
+                &::before {
+                    content: "裸眼視力目安 : ";
+                }
+
+                &::after {
+                    content: " 程度";
+                }
             }
         }
 
@@ -1147,9 +1195,14 @@ section {
                 }
             }
         }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         h3 {
             font-size: 42px;
             gap: 20px;
@@ -1178,9 +1231,8 @@ section {
         &__link {
             gap: 20px;
             margin-top: 30px;
-            
+
             a {
-                padding-bottom: 8%;
                 img {
                     height: 54px;
                 }
@@ -1231,7 +1283,7 @@ section {
         }
     }
 
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         &__slider {
             padding-top: 0;
         }
@@ -1261,7 +1313,7 @@ section {
         }
     }
 
-    @media (min-width: 1200px) {
+    @include mq-up(lg) {
         &__group {
             grid-template-columns: 52% 1fr;
 
@@ -1358,7 +1410,7 @@ section {
         }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         background: url('../images/concept_bg.png') center/cover no-repeat;
 
         &__inner {
@@ -1400,7 +1452,7 @@ section {
         }
     }
 
-    @media (min-width: 1024px) {
+    @include mq-up(md) {
         &__inner {
             padding: 1px 60px 60px;
             transform: none;
@@ -1417,7 +1469,7 @@ section {
         }
     }
 
-    @media (min-width: 1200px) {
+    @include mq-up(lg) {
         &__inner {
             &::after {
                 right: -30px;
@@ -1481,7 +1533,7 @@ section {
         }
     }
 
-    @media (min-width: 768px) {
+    @include mq-up() {
         .slick-dots {
             gap: 10px;
             margin-top: 20px;
@@ -1497,7 +1549,7 @@ section {
 
 // Custom fancybox
 .fancybox-slide {
-    @media (max-width: 767px) {
+    @include mq-down(md) {
         padding: 10px !important;
     }
 }
