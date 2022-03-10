@@ -1086,10 +1086,16 @@ padding-bottom: 0;
       background: url(../images/bg_concept.png)center no-repeat;
       width: 100%;
       opacity: 0.5;
-height: 10vh;
     }
     &::before{
-      top: 0;
+      top: -50px;
+      height: 30vh;
+      z-index: -1;
+    }
+    &::after{
+      height: 55vh;
+      top: 180px;
+      z-index: -1;
     }
   }
  
