@@ -84,7 +84,7 @@ ul {
     text-align: center;
     display: table;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1em;
     position: relative;
 
     &::before,
@@ -119,10 +119,13 @@ ul {
     small {
         img {
             height: 14px;
+            margin-top: 10px;
         }
     }
 
     @media (min-width: 768px) {
+        padding: 0 1.8em;
+
         > img {
             height: 39px;
         }
@@ -130,12 +133,13 @@ ul {
         small {
             img {
                 height: 22px;
+                margin-top: 13px;
             }
         }
     }
     
     @media (min-width: 1024px) {
-        padding-bottom: 3.5rem;
+        margin-bottom: 3.5rem;
         > img {
             height: 49px;
         }
@@ -1043,6 +1047,7 @@ section {
 
     h4 {
         font-size: 20px;
+        font-weight: 400;
 
         small {
             font-size: 12px;
@@ -1057,7 +1062,7 @@ section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        padding-top: 20px;
+        margin-top: 20px;
 
         &-wrapper {
             position: relative;
@@ -1106,7 +1111,7 @@ section {
         height: 66px;
         background: url('../images/bubble.svg') center/contain no-repeat;
         position: absolute;
-        top: -55px;
+        top: -75px;
         right: -5px;
         
         span {
@@ -1172,8 +1177,10 @@ section {
 
         &__link {
             gap: 20px;
+            margin-top: 30px;
+            
             a {
-                padding: 4% 10% 7%;
+                padding-bottom: 8%;
                 img {
                     height: 54px;
                 }
