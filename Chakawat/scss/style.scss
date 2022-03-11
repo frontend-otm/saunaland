@@ -142,7 +142,35 @@ img {
     display: flex;
   }
   &__logo-saunaland img {
-    margin: auto 1rem;
+    margin: auto;
+  }
+  &__logo-cross{
+    width: 50px;
+    height: 7vh;
+    position: relative;
+    display: grid;
+    align-items: center;
+    margin: 0 2rem;
+
+    &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 1px;
+            height: 100%;
+            background-color: $white;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
   }
   &__footer {
     background-color: rgba(148, 72, 203, 0.6);
@@ -153,7 +181,11 @@ img {
     text-align: center;
     font-size: 17px;
   }
+
   @media screen and (max-width: 575px) {
+
+  }
+  @media screen and (max-width: 767px) {
     &__bg {
       &::before {
         height: 80vh;
@@ -173,7 +205,7 @@ img {
     }
     &__content p {
       position: relative;
-      font-size: 10px;
+      font-size: 15px;
       font-weight: 400;
     }
     &__logo-product {
@@ -192,8 +224,9 @@ img {
     }
     &__logo-product img {
       margin-top: 1rem;
-      width: 300px;
+      width: 30rem;
       position: relative;
+      padding: 0 1.5rem;
     }
     &__logo-saunaland {
       margin-top: 2.5rem;
@@ -203,6 +236,8 @@ img {
       row-gap: 1rem;
     }
   }
+
+
 }
 
 /*--------------------------------------------------------------
