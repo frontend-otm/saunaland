@@ -410,7 +410,8 @@ img {
   &-img {
     position: relative;
     transition: 0.4s all;
-    &:hover {
+    &:hover, 
+    &:active {
       filter: drop-shadow(0px 4px 30px rgba(255, 255, 255, 0.5))
         drop-shadow(0px -1px 3px rgba(255, 255, 255, 0.5));
     }
