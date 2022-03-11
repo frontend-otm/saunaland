@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
-@mixin mq-up($size: null) {
+@mixin mq-up($size: default) {
     @if $size == xs {
         @media (min-width: 640px) { @content; }
     } 
@@ -13,12 +13,12 @@
     @else if $size == lg {
         @media (min-width: 1200px) { @content; }
     }
-    @else if $size == null {
+    @else {
         @media (min-width: 768px) { @content; }
-    } 
+    }
 }
 
-@mixin mq-down($size: null) {
+@mixin mq-down($size: default) {
     @if $size == xs {
         @media (max-width: 639px) { @content; }
     } 
@@ -31,29 +31,40 @@
     @else if $size == lg {
         @media (max-width: 1199px) { @content; }
     }
-    @else if $size == null {
+    @else {
         @media (max-width: 767px) { @content; }
     }
 }
 
 $white: #fff;
+$black: #000;
+$gray: #363636;
 $yellow: #FDEF4E;
 
 $lt_space: 0.04em;
 
+$fw_lig: 300;
+$fw_reg: 400;
+$fw_med: 500;
+$fw_bol: 700;
+
+//Reset
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
+    border: 0;
+	outline: 0;
     box-sizing: border-box;
 }
 
+// Normalize
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
+    font-weight: $fw_reg;
     -webkit-font-smoothing: antialiased;
-    background-color: #000;
+    background-color: $black;
     color: $white;
     letter-spacing: $lt_space;
 }
@@ -64,8 +75,6 @@ img {
 }
 
 ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
 }
 
@@ -74,12 +83,39 @@ ul {
     overflow: hidden;
 }
 
+//Section
+body {
+    > section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @include mq-up(md) {
+            padding-top: 3.5rem;
+            padding-bottom: 3.5rem;
+        }
+
+        @include mq-up(lg) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+}
+
+//Container
+.container {
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: calc(1160px + 50px);
+    margin: auto;
+}
+
 //Title
 .title {
     overflow: hidden;
+
     &__text {
         font-size: 12px;
-        font-weight: 400;
+        font-weight: $fw_reg;
         display: inline-block;
         position: relative;
         line-height: 1.2em;
@@ -98,7 +134,7 @@ ul {
         strong {
             color: $yellow;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: $fw_med;
             letter-spacing: 0.2em;
         }
     }
@@ -116,6 +152,7 @@ ul {
     }
 }
 
+//Section title
 .section-title {
     text-align: center;
     display: table;
@@ -176,6 +213,7 @@ ul {
     
     @include mq-up(md) {
         margin-bottom: 3.5rem;
+
         > img {
             height: 49px;
         }
@@ -188,30 +226,6 @@ ul {
     }
 }
 
-//Section
-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-
-    @include mq-up(md) {
-        padding-top: 3.5rem;
-        padding-bottom: 3.5rem;
-    }
-
-    @include mq-up(lg) {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-}
-
-//Container
-.container {
-    padding-left: 25px;
-    padding-right: 25px;
-    max-width: calc(1160px + 50px);
-    margin: auto;
-}
-
 //Hero
 .hero {
     padding-top: 0;
@@ -219,8 +233,7 @@ section {
     
     &__inner {
         position: relative;
-        background: url(../images/hero-sp.jpg) no-repeat;
-        background-size: cover;
+        background: url(../images/hero-sp.jpg) top center/cover no-repeat;
 
         &::before {
             content: "";
@@ -240,7 +253,7 @@ section {
 
     &__content {
         font-size: 10px;
-        font-weight: 700;
+        font-weight: $fw_bol;
         padding: 25% 0;
         color: $white;
         text-align: center;
@@ -261,7 +274,7 @@ section {
 
         &-footer {
             font-size: 9px;
-            font-weight: 700;
+            font-weight: $fw_bol;
             letter-spacing: 0.08em;
             position: absolute;
             bottom: 0;
@@ -291,7 +304,7 @@ section {
             right: -60px;
             width: 155px;
             height: 140px;
-            background: url(../images/splash-1.png) top left / contain no-repeat;
+            background: url(../images/splash-1.png) top left/contain no-repeat;
             z-index: 1;
         }
     }
@@ -358,14 +371,14 @@ section {
         }
     }
 
-    @include mq-up() {
+    @include mq-up(md) {
         &__inner {
             background: none;
         }
 
         &__bg {
             display: block;
-            max-width: 1400px;
+            max-width: none;
             margin-left: auto;
         }
 
@@ -405,14 +418,6 @@ section {
             margin: 37px auto 0;
         }
     
-        &__logo-saunaland {
-            width: 253px;
-        }
-    
-        &__logo-owndays {
-            width: 223px;
-        }
-    
         &__cross {
             width: 56px;
             height: 56px;
@@ -421,16 +426,23 @@ section {
     }
 }
 
-// Concept section
+// Concept
 .concept {
     &__img {
-        background: url('../images/img_border.svg') top right / contain no-repeat;
+        background: url('../images/img_border.svg') top right/contain no-repeat;
         padding: 6% 6% 6% 0;
         margin-top: 1.5rem;
     }
 
     &__description {
         margin-top: 3.3rem;
+
+        &-wrapper {
+            width: calc(100% + 50px);
+            transform: translateX(-25px);
+            background-color: $gray;
+            padding: 4.6em 25px 2.5em;
+        }
 
         h2 {
             margin-bottom: -2.3em;
@@ -446,19 +458,10 @@ section {
             font-size: 14px;
             line-height: 2em;
         }
-
-        &-wrapper {
-            width: calc(100% + 50px);
-            transform: translateX(-25px);
-            background-color: #363636;
-            padding: 4.6em 25px 2.5em;
-        }
     }
     
     &__link {
-        list-style: none;
         padding: 3rem 0;
-        margin: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 15px 10px;
@@ -489,7 +492,7 @@ section {
 
     @include mq-up() {
         > .container {
-            background: url('../images/concept_bg.png') top center / contain no-repeat;
+            background: url('../images/concept_bg.png') top center/contain no-repeat;
         }
 
         &__info {
@@ -514,8 +517,10 @@ section {
                 transform: translateX(5%);
                 padding: 28% 8% 2.5em;
             }
+
             h2 {
                 margin-bottom: -22%;
+
                 img {
                     width: 100%;
                     max-width: 520px;
@@ -553,21 +558,21 @@ section {
     }
 }
 
-// Video section
+// Video
 .video {
     line-height: 1.7em;
     padding-top: 1rem;
 
     &__info {
-        background-color: #363636;
+        background-color: $gray;
         padding-bottom: 3rem;
         max-width: 1160px;
     }
 
     &__title {
         font-size: 11px;
-        font-weight: 400;
-        color: #000;
+        font-weight: $fw_reg;
+        color: $black;
         text-align: center;
         line-height: 1.45em;
         background-color: $yellow;
@@ -591,7 +596,7 @@ section {
                 left: 0;
                 width: 100%;
                 height: 50%;
-                background-color: #363636;
+                background-color: $gray;
                 z-index: 1;
             }
         }
@@ -601,7 +606,7 @@ section {
         font-size: 12px;
         color: $yellow;
         text-align: center;
-        font-weight: 400;
+        font-weight: $fw_reg;
         display: block;
         padding: 1.5rem 0;
     }
@@ -688,7 +693,7 @@ section {
     }
 }
 
-// Spec section
+// Spec
 .spec {
     &__list {
         margin-top: 3rem;
@@ -696,7 +701,7 @@ section {
 
         h3 {
             font-size: 22px;
-            font-weight: 700;
+            font-weight: $fw_bol;
             margin: 20px 0 10px;
         }
 
@@ -771,12 +776,14 @@ section {
                 right: 0;
                 width: 64px;
                 height: 64px;
-                background: #000 center / contain no-repeat;
+                background: $black center/contain no-repeat;
                 border-radius: 50%;
             }
 
             img {
                 margin-left: -25px;
+                width: 100%;
+                max-width: none;
             }
         }
     }
@@ -826,8 +833,10 @@ section {
     }
 }
 
+// Power
 .power {
     border-top: 6px dotted #2E2E2E;
+
     h2 {
         padding: 1.5rem 0;
         margin-bottom: 0;
@@ -847,32 +856,60 @@ section {
         margin-top: 2rem;
         text-align: center;
 
+        tr {
+            $r: 6px;
+
+            &:nth-child(2) {
+                td {
+                    &:first-child {
+                        border-top-left-radius: $r;
+                    }
+
+                    &:last-child {
+                        border-top-right-radius: $r;
+                    }
+                }
+            }
+
+            &:last-child {
+                td {
+                    &:first-child {
+                        border-bottom-left-radius: $r;
+                    }
+
+                    &:last-child {
+                        border-bottom-right-radius: $r;
+                    }
+                }
+            }
+        }
+
         th {
             font-size: 16px;
             padding: 0.5em 0.25em;
 
             &:first-child {
                 color: #BD8ABC;
-                font-weight: 500;
+                font-weight: $fw_med;
             }
 
             &:last-child {
                 color: $yellow;
-                font-weight: 700;
+                font-weight: $fw_bol;
             }
         }
-
+        
         td {
             font-size: 25px;
             padding: 0.3em 0.5em;
 
-
             &:first-child {
                 background-color: rgba(234,234,234,.55);
             }
+
             &:last-child {
                 background-color: rgba(255,255,255,.9);
-                color: #000;
+                color: $black;
             }
 
             span {
@@ -883,29 +920,6 @@ section {
 
             small {
                 font-size: 16px;
-            }
-        }
-
-        tr {
-            &:nth-child(2) {
-                td {
-                    &:first-child {
-                        border-top-left-radius: 6px;
-                    }
-                    &:last-child {
-                        border-top-right-radius: 6px;
-                    }
-                }
-            }
-            &:last-child {
-                td {
-                    &:first-child {
-                        border-bottom-left-radius: 6px;
-                    }
-                    &:last-child {
-                        border-bottom-right-radius: 6px;
-                    }
-                }
             }
         }
     }
@@ -966,6 +980,7 @@ section {
     }
 }
 
+// Easy carry
 .easy-carry {
     position: relative;
     padding-bottom: 0;
@@ -990,9 +1005,9 @@ section {
         padding-bottom: 20%;
 
         p {
-            color: #000;
+            color: $black;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: $fw_med;
             letter-spacing: 0.08em;
             padding: 0.5em 0.7em;
             display: inline-block;
@@ -1049,7 +1064,10 @@ section {
     }
 }
 
+// Line up
 .lineup {
+    $note_bd_cl: #707070;
+
     &__group {
         ~.lineup__group {
             margin-top: 3rem;
@@ -1073,7 +1091,7 @@ section {
 
     h3 {
         font-size: 30px;
-        font-weight: 400;
+        font-weight: $fw_reg;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -1087,7 +1105,7 @@ section {
 
     h4 {
         font-size: 20px;
-        font-weight: 400;
+        font-weight: $fw_reg;
 
         small {
             font-size: 12px;
@@ -1113,8 +1131,9 @@ section {
             text-decoration: none;
             display: block;
             background: url('../images/lineup_btn_blue.png') center/100% 100% no-repeat;
-            padding: 3% 10% 9%;
+            padding: 3.5% 10% 9%;
             transition: 0.3s;
+
             &:hover {
                 filter: brightness(130%) saturate(200%);
             }
@@ -1128,7 +1147,7 @@ section {
 
             span {
                 font-size: 8px;
-                font-weight: 400;
+                font-weight: $fw_reg;
 
                 &::before {
                     content: "裸眼視力目安 : ";
@@ -1149,8 +1168,8 @@ section {
 
     &__bubble {
         font-size: 9px;
-        font-weight: 700;
-        color: #000;
+        font-weight: $fw_bol;
+        color: $black;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -1164,7 +1183,7 @@ section {
         
         span {
             display: block;
-            margin-top: -10px;
+            margin: -10px 0 0 6px;
             transform: rotate(-2deg);
         }
     }
@@ -1172,22 +1191,23 @@ section {
     &__note {
         margin-top: 3rem;
         padding: 20px;
-        border: 1px solid #707070;
+        border: 1px solid $note_bd_cl;
 
         h5 {
             font-size: 14px;
-            font-weight: 500;
+            font-weight: $fw_med;
         }
 
         ul {
             font-size: 12px;
-            font-weight: 400;
+            font-weight: $fw_reg;
             line-height: 1.67em;
             margin-top: 1rem;
 
             li {
                 padding-left: 1.5em;
                 position: relative;
+
                 &::before {
                     content: "※";
                     position: absolute;
@@ -1203,6 +1223,10 @@ section {
     }
 
     @include mq-up() {
+        > .container {
+            padding-top: 40px;
+        }
+
         h3 {
             font-size: 42px;
             gap: 20px;
@@ -1277,7 +1301,7 @@ section {
                     left: 0;
                     height: calc(100% + 30px);
                     transform: translateY(-15px);
-                    border-left: 1px solid #707070;
+                    border-left: 1px solid $note_bd_cl;
                 }
             }
         }
@@ -1291,13 +1315,13 @@ section {
         &__group {
             display: grid;
             grid-template-columns: 48% 1fr;
-            padding-top: 75px;
 
             &--pink {
                 grid-template-columns: 1fr 48%;
                 .lineup__detail {
                     order: 1;
                 }
+
                 .lineup__slider {
                     order: 2;
                 }
@@ -1337,7 +1361,7 @@ section {
     }
 }
 
-
+//About
 .about {
     overflow: hidden;
 
@@ -1370,7 +1394,7 @@ section {
     }
 
     &__inner {
-        background-color: #363636;
+        background-color: $gray;
         width: calc(100% + 50px);
         transform: translateX(-25px);
         padding: 1px 25px 50px;
@@ -1491,7 +1515,6 @@ section {
 
 
 // Custom slick
-
 .slick-list {
     margin: 0 -5px;
 }
@@ -1501,7 +1524,7 @@ section {
 }
 
 .slick-dots {
-    display: flex !important;
+    display: flex;
     gap: 5px;
     position: static;
     margin-top: 10px;
@@ -1520,7 +1543,7 @@ section {
         }
 
         button {
-            background: #363636;
+            background: $gray;
             width: 100%;
             height: 4px;
             padding: 0;
